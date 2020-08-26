@@ -20,13 +20,13 @@ class AlumnoAdmin(admin.ModelAdmin):
             'fields': ('matricula',)
         }),
         ('Bibloteca', {
-            'fields': ('numLibros','adeudo',)
+            'fields': ('num_libros','adeudo',)
         }),
     )
 
 class ProfesorAdmin(admin.ModelAdmin):
     inlines = [PrestamoInLine, ]
-    search_fields = ['nombre', 'apellido', 'correo', 'telefono', 'numEmpleado']
+    search_fields = ['nombre', 'apellido', 'correo', 'telefono', 'num_empleado']
     fieldsets = (
         ("Persona", {
             'fields': ('nombre', 'apellido',)
@@ -35,10 +35,10 @@ class ProfesorAdmin(admin.ModelAdmin):
             'fields': ('correo', 'telefono',)
         }),
         ('Empleado', {
-            'fields': ('numEmpleado',)
+            'fields': ('num_empleado',)
         }),
         ('Bibloteca', {
-            'fields': ('numLibros','adeudo',)
+            'fields': ('num_libros','adeudo',)
         }),
     )
 
@@ -49,7 +49,7 @@ class LibroAdmin(admin.ModelAdmin):
     list_filter = ('autor','anio',)
     fieldsets = (
         ("Material", {
-            'fields': ('codigo', 'autor','titulo','anio','fotoPortada')
+            'fields': ('codigo', 'autor','titulo','anio','foto_portada')
         }),
         ('Estado', {
             'fields': ('status',)
@@ -74,8 +74,8 @@ class RevistaAdmin(admin.ModelAdmin):
     )
 
 class PrestamoAdmin(admin.ModelAdmin):
-    list_display = ('fechaSalida','fechaRegreso','persona', 'material',)
-    list_filter = ('persona','material','fechaSalida','fechaRegreso',)
+    list_display = ('fecha_salida','fecha_regreso','persona', 'material',)
+    list_filter = ('persona','material','fecha_salida','fecha_regreso',)
 
 
 admin.site.register(Editorial)
