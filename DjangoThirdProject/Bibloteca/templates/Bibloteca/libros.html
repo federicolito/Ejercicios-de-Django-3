@@ -1,20 +1,53 @@
 {% extends 'Bibloteca/main.html'%}
 
 {% block content %}
-<div class="row">
-    <div class="col-md">
+<div class="row justify-content-center">
+    <div class="col-md-10">
         <div class="card card-body">
             <h5>Libros</h5>
         </div>
         
 
     </div>
-    <div class="col-md">
+    <div class="col-md-10">
         <div class="card card-body">
             <i class="fa fa-info" aria-hidden="true">Aqui puedes ver los libros que hay y elegir uno para llevartelo prestado</i>
         </div>
         
 
     </div>
+    <div class="col-md-10">
+        <div class="card card-body">
+            <div class="row">
+            <div class="col-md">
+            titulo
+            </div>
+            <div class="col-md">
+            Autor
+            </div>
+            <div class="col-md">
+            Año
+            </div>
+            </div>
+            {% for libro in libros %}
+        
+                <div class="row">
+                <div class="col-md">
+                {{libro.titulo}}
+                {{libro.foto_portada}}  
+                </div>
+                <div class="col-md">
+                {{libro.autor}} 
+                </div>
+                <div class="col-md">
+                {{libro.anio}} 
+                </div>
+                </div>
+            {% endfor %}
+        </div>
+        
+
+    </div>
+    
 </div>
 {% endblock %}
